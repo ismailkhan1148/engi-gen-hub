@@ -11,8 +11,19 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
-import profileAsset from "@/assets/ismail-profile.jpg.asset.json";
-const profileImg = profileAsset.url;
+import p480Avif from "@/assets/ismail_480.avif.asset.json";
+import p800Avif from "@/assets/ismail_800.avif.asset.json";
+import p1200Avif from "@/assets/ismail_1200.avif.asset.json";
+import p480Webp from "@/assets/ismail_480.webp.asset.json";
+import p800Webp from "@/assets/ismail_800.webp.asset.json";
+import p1200Webp from "@/assets/ismail_1200.webp.asset.json";
+import p480Jpg from "@/assets/ismail_480.jpg.asset.json";
+import p800Jpg from "@/assets/ismail_800.jpg.asset.json";
+import p1200Jpg from "@/assets/ismail_1200.jpg.asset.json";
+const avifSrcSet = `${p480Avif.url} 480w, ${p800Avif.url} 800w, ${p1200Avif.url} 1200w`;
+const webpSrcSet = `${p480Webp.url} 480w, ${p800Webp.url} 800w, ${p1200Webp.url} 1200w`;
+const jpgSrcSet  = `${p480Jpg.url} 480w, ${p800Jpg.url} 800w, ${p1200Jpg.url} 1200w`;
+const profileImg = p800Jpg.url;
 import cncImg from "@/assets/proj-cnc.jpg";
 import elecImg from "@/assets/proj-electrical.jpg";
 import solarImg from "@/assets/proj-solar.jpg";
@@ -537,13 +548,21 @@ export default function Portfolio() {
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 className="absolute inset-[-12px] rounded-full border-2 border-dashed border-primary/40"
               />
-              <img
-                src={profileImg}
-                alt="Muhammad Ismail portrait"
-                width={384}
-                height={384}
-                className="h-full w-full object-cover"
-              />
+              <picture>
+                <source type="image/avif" srcSet={avifSrcSet} sizes="(min-width: 768px) 384px, 288px" />
+                <source type="image/webp" srcSet={webpSrcSet} sizes="(min-width: 768px) 384px, 288px" />
+                <img
+                  src={p800Jpg.url}
+                  srcSet={jpgSrcSet}
+                  sizes="(min-width: 768px) 384px, 288px"
+                  alt="Muhammad Ismail portrait"
+                  width={384}
+                  height={384}
+                  decoding="async"
+                  fetchPriority="high"
+                  className="h-full w-full object-cover"
+                />
+              </picture>
             </div>
           </motion.div>
         </div>
