@@ -192,8 +192,6 @@
   color: var(--primary-foreground);
   box-shadow: var(--shadow-glow);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-@utility btn-gradient {
   &:hover {
     transform: translateY(-2px);
   }
