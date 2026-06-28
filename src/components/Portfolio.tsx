@@ -20,6 +20,7 @@ import p1200Webp from "@/assets/ismail_1200.webp.asset.json";
 import p480Jpg from "@/assets/ismail_480.jpg.asset.json";
 import p800Jpg from "@/assets/ismail_800.jpg.asset.json";
 import p1200Jpg from "@/assets/ismail_1200.jpg.asset.json";
+import cvAsset from "@/assets/cv.pdf.asset.json";
 const avifSrcSet = `${p480Avif.url} 480w, ${p800Avif.url} 800w, ${p1200Avif.url} 1200w`;
 const webpSrcSet = `${p480Webp.url} 480w, ${p800Webp.url} 800w, ${p1200Webp.url} 1200w`;
 const jpgSrcSet  = `${p480Jpg.url} 480w, ${p800Jpg.url} 800w, ${p1200Jpg.url} 1200w`;
@@ -512,7 +513,12 @@ export default function Portfolio() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg" className="btn-gradient rounded-full px-6">
-                <a href="/cv-muhammad-ismail.pdf" download>
+                <a
+                  href={cvAsset.url}
+                  download="Muhammad-Ismail-CV.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Download className="mr-2 h-4 w-4" /> Download CV
                 </a>
               </Button>
