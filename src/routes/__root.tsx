@@ -77,16 +77,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Muhammad Ismail — Engineer, Electrician, Solar Installer & CS Student" },
+      { name: "description", content: "Portfolio of Muhammad Ismail — Mechanical Engineer (DAE), Professional Electrician, Solar System Installer, and BS Computer Science student bridging engineering and technology." },
+      { name: "author", content: "Muhammad Ismail" },
+      { name: "keywords", content: "Muhammad Ismail, Mechanical Engineer, DAE, Electrician, Solar Installer, CNC, MERN, Portfolio, Nowshera" },
+      { property: "og:title", content: "Muhammad Ismail — Engineering & Technology Portfolio" },
+      { property: "og:description", content: "Mechanical Engineering · Electrical Systems · Solar Energy · Computer Science." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap",
+      },
       {
         rel: "stylesheet",
         href: appCss,
